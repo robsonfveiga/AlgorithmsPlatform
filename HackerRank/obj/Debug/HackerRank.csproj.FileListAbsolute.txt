@@ -5,3 +5,6 @@ c:\users\robso\onedrive\documents\visual studio 2015\Projects\HackerRank\HackerR
 c:\users\robso\onedrive\documents\visual studio 2015\Projects\HackerRank\HackerRank\obj\Debug\HackerRank.exe
 c:\users\robso\onedrive\documents\visual studio 2015\Projects\HackerRank\HackerRank\obj\Debug\HackerRank.pdb
 c:\users\robso\onedrive\documents\visual studio 2015\Projects\HackerRank\HackerRank\bin\Debug\input.txt
+C:\Users\robso\Source\Repos\HackerRank\HackerRank\bin\Debug\HackerRank.exe.config
+C:\Users\robso\Source\Repos\HackerRank\HackerRank\obj\Debug\HackerRank.exe
+C:\Users\robso\Source\Repos\HackerRank\HackerRank\obj\Debug\HackerRank.pdb
