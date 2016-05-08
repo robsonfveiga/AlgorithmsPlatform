@@ -35,14 +35,20 @@ namespace HackerRank.Algorithms
                 line = Console.ReadLine();
             } while (line != null);
 
-
-            for (int x = 0; x < arr.Count(); x++)
+            int arraySize = arr.Count();
+            for (int x = 0; x < arraySize; x++)
                 diagonal1 += arr[x][x];
 
-            for (int x = arr.Count(); x > 0 ; x++)
-                diagonal2 += arr[x][x];
+            for (int x = (arraySize); x > 0 ; --x)
+                diagonal2 += arr[arraySize - x ][x-1];
 
-            System.Console.Write(diagonal1- diagonal2);
+
+            if(diagonal1> diagonal2)
+                System.Console.Write(diagonal1 - diagonal2);
+            else
+                System.Console.Write(diagonal2 - diagonal1);
+
+
         }
     }
 }
