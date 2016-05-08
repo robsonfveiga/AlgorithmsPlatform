@@ -13,7 +13,7 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new DiagonalDifference();
+            HackerRank hackerRank = new Algorithms.PlusMinus();
             hackerRank.run(input);
 
             Console.ReadLine();
