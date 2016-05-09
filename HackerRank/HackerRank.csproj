@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="30daysChallange\DataTypes.cs" />
     <Compile Include="30daysChallange\HelloWorld.cs" />
-    <Compile Include="Algorithms\DiagonalDifference.cs" />
-    <Compile Include="Algorithms\PlusMinus.cs" />
-    <Compile Include="Algorithms\SimpleArraySum.cs" />
+    <Compile Include="Algorithms\Warmup\DiagonalDifference.cs" />
+    <Compile Include="Algorithms\Warmup\PlusMinus.cs" />
+    <Compile Include="Algorithms\Warmup\SimpleArraySum.cs" />
+    <Compile Include="Algorithms\Warmup\Staircase.cs" />
+    <Compile Include="Algorithms\Warmup\TimeConversion.cs" />
     <Compile Include="app.cs" />
     <Compile Include="HackerRank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
