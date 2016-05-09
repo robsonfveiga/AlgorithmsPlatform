@@ -13,7 +13,7 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new Algorithms.Implementation.AngryProfessor();
+            HackerRank hackerRank = new Algorithms.TimeConversion();
             hackerRank.run(input);
 
             Console.ReadLine();
