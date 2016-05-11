@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="30daysChallange\ClassVsInstance.cs" />
     <Compile Include="30daysChallange\DataTypes.cs" />
     <Compile Include="30daysChallange\HelloWorld.cs" />
     <Compile Include="30daysChallange\IntroToConditionalStatements.cs" />
