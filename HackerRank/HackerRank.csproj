@@ -50,6 +50,7 @@
     <Compile Include="30daysChallange\Operators.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
     <Compile Include="Algorithms\Implementation\FindDigits.cs" />
+    <Compile Include="Algorithms\Implementation\ServiceLane.cs" />
     <Compile Include="Algorithms\Implementation\SherlockAndSquares.cs" />
     <Compile Include="Algorithms\Implementation\SherlockAndTheBeast.cs" />
     <Compile Include="Algorithms\Implementation\UtopianTree.cs" />
