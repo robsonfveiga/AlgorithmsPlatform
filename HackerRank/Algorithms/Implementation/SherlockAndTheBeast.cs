@@ -11,58 +11,56 @@ namespace HackerRank.Algorithms.Implementation
     {
         public void run(StreamReader Console)
         {
-            string three, five,final;
-            int limit;
+            int p3, p5,count;
+            String valor;
             int t = Convert.ToInt32(Console.ReadLine());
-
+            
 
             for (int x = 0; x < t; x++)
             {
                 int n = Convert.ToInt32(Console.ReadLine());
 
-                if (n < 3)
-                {
+                if (n<3) {
                     System.Console.WriteLine(-1);
+                    continue;
                 }
-                else if (n == 3)
-                {
-                    System.Console.WriteLine("555");
-     
-                }
-                else if (n == 5)
-                {
-                    System.Console.WriteLine("33333");
+             
+                //Possibilidades do conjunto {33333}
+                p3 = Math.Abs(n / 5);
+                //Possibilidades do conjunto {555}
+                p5 = Math.Abs(n / 3);
 
-                }
-                else
+                //adiciona o maximo possivel do conjunto {555}
+                valor = String.Concat(Enumerable.Repeat("555", p5));
+
+                if (valor.Length != n)
                 {
-                    three = new String('3', n);
-                    final = three;
-                    limit = -1;
-                    for (int xx = 1; xx < n; xx++)
+
+                    //Coloca valores "X" representativos para que o conjunto de {33333} comece a ser colocado
+                    valor = valor + String.Concat(Enumerable.Repeat("X", n - (p5 * 3)));
+
+                    count = 5;
+                    for (int xx = 1; xx <= p3; xx++)
                     {
-                        if (three.Length != 5)
+                        //Insere o conjunto {33333}
+                        valor = valor.Remove(valor.Length - (count) * xx, 5);
+                        valor += "33333";
+
+                        //Verifica se os conjuntos de {555} continuam com a propriedade de multiplos de 3
+                        if (valor.Count(y => y.Equals('5')) % 3 == 0)
                         {
-                            three = three.Remove(0, xx);
+                            System.Console.WriteLine(valor);
+                            break;
                         }
-                        else {
-                            if(limit==-1)
-                                limit = xx;
-                        }
+                    }
 
-                        five = new String('5', xx);
-                    
-                        if (three.Length % 5 == 0 && five.Length % 3 == 0) {
-                            final = five + three;
-                        }
-                    }
-                    if (limit != -1)
+                    if (valor.Count(y => y.Equals('X')) != 0 || (valor.Count(y => y.Equals('5')) % 3 != 0 || valor.Count(y => y.Equals('3')) % 5 != 0))
                     {
-                        System.Console.WriteLine(final.Remove(0, limit - 1));
+                        System.Console.WriteLine(-1);
                     }
-                    else {
-                        System.Console.WriteLine(final);
-                    }
+                }
+                else {
+                    System.Console.WriteLine(valor);
                 }
             }
         }
