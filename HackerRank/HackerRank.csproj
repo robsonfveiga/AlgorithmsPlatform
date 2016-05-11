@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="30daysChallange\DataTypes.cs" />
     <Compile Include="30daysChallange\HelloWorld.cs" />
+    <Compile Include="30daysChallange\IntroToConditionalStatements.cs" />
+    <Compile Include="30daysChallange\Operators.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
     <Compile Include="Algorithms\Implementation\SherlockAndTheBeast.cs" />
     <Compile Include="Algorithms\Warmup\DiagonalDifference.cs" />

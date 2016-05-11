@@ -1,4 +1,5 @@
-﻿using HackerRank.Algorithms;
+﻿using HackerRank._30daysChallange;
+using HackerRank.Algorithms;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new Algorithms.Implementation.SherlockAndTheBeast();
+            HackerRank hackerRank = new IntroToConditionalStatements();
             hackerRank.run(input);
 
             Console.ReadLine();
