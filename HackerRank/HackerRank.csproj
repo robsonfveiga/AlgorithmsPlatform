@@ -49,6 +49,7 @@
     <Compile Include="30daysChallange\Operators.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
     <Compile Include="Algorithms\Implementation\SherlockAndTheBeast.cs" />
+    <Compile Include="Algorithms\Implementation\UtopianTree.cs" />
     <Compile Include="Algorithms\Warmup\DiagonalDifference.cs" />
     <Compile Include="Algorithms\Warmup\PlusMinus.cs" />
     <Compile Include="Algorithms\Warmup\SimpleArraySum.cs" />
