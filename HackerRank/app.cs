@@ -15,7 +15,7 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new ClassVsInstance();
+            HackerRank hackerRank = new SherlockAndSquares();
             hackerRank.run(input);
 
             Console.ReadLine();
