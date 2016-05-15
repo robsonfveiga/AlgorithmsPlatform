@@ -1,5 +1,6 @@
 ﻿using HackerRank._30daysChallange;
 using HackerRank.Algorithms;
+using HackerRank.Algorithms.GraphTheory;
 using HackerRank.Algorithms.Implementation;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new ServiceLane();
+            HackerRank hackerRank = new KthAncestor();
             hackerRank.run(input);
 
             Console.ReadLine();
