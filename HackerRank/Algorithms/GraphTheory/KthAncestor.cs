@@ -9,11 +9,13 @@ namespace HackerRank.Algorithms.GraphTheory
 {
     class KthAncestor : HackerRank
     {
+        Dictionary<int, List<int>> grafo = new Dictionary<int, List<int>>();
+
         public void run(StreamReader Console)
         {
             int t,p,x,y,q;
             int[] nodes,line;
-            Dictionary<int, List<int>> grafo = new Dictionary<int, List<int>>();
+            
             t = int.Parse(Console.ReadLine());
             List<int> aux;
 
@@ -33,15 +35,8 @@ namespace HackerRank.Algorithms.GraphTheory
                     //Y = Pai
                     y = nodes[1];
 
-                    if (!grafo.ContainsKey(y))
-                    {
-                        aux = new List<int>();
-                        aux.Add(x);
-                        grafo.Add(y, aux);
-                    }
-                    else {
-                        grafo[y].Add(x);
-                    }
+                    this.addleaf(y, x);
+
                 }
 
                 //Numero de consultas. 
@@ -49,21 +44,54 @@ namespace HackerRank.Algorithms.GraphTheory
                 for (int ii = 0; ii < q; ii++)
                 {
                     line = Array.ConvertAll(Console.ReadLine().Split(),int.Parse);
-
+                    y = line[1];
+                
                     switch (line[0]) {
                         case 0:
-                        
+                            //Adiciona valor no indice
+                            x = line[2];
+                            this.addleaf(y, x);
                         break;
                         case 1:
-                         
+                            //Remove valor do indice
+                            this.grafo.Remove(y);
                         break;
                         case 2:
-                          
-                        break;
-
+                            //Imprime valor Kth parent of X
+                            x = line[1];
+                            System.Console.WriteLine(this.getParent(x,0));
+                            break;
                     }
-
                 }
+            }
+        }
+
+
+        public int getParent(int ArgKey,int cont) {
+            List<int> values;
+            foreach (int key in this.grafo.Keys) {
+                values = this.grafo[key];
+                if (values.Exists(x => x == ArgKey)) {
+                    cont++;
+                    return getParent(key, cont);
+                }
+            }
+            return cont;
+        }
+
+
+
+        public void addleaf(int y, int x) {
+            List<int> aux;
+            if (!grafo.ContainsKey(y))
+            {
+                aux = new List<int>();
+                aux.Add(x);
+                grafo.Add(y, aux);
+            }
+            else
+            {
+                grafo[y].Add(x);
             }
         }
     }
