@@ -13,7 +13,7 @@ namespace HackerRank.Algorithms.GraphTheory
 
         public void run(StreamReader Console)
         {
-            int t,p,x,y,q;
+            int t,p,x,y,q,l;
             int[] nodes,line;
             
             t = int.Parse(Console.ReadLine());
@@ -59,7 +59,8 @@ namespace HackerRank.Algorithms.GraphTheory
                         case 2:
                             //Imprime valor Kth parent of X
                             x = line[1];
-                            System.Console.WriteLine(this.getParent(x,0));
+                            l = line[2];
+                            System.Console.WriteLine(this.getParent(x,0,l));
                             break;
                     }
                 }
@@ -67,16 +68,20 @@ namespace HackerRank.Algorithms.GraphTheory
         }
 
 
-        public int getParent(int ArgKey,int cont) {
+        public int getParent(int ArgKey,int cont,int limit) {
             List<int> values;
             foreach (int key in this.grafo.Keys) {
                 values = this.grafo[key];
-                if (values.Exists(x => x == ArgKey)) {
+                if (values.Exists(x => x == ArgKey)&& limit!=cont) {
                     cont++;
-                    return getParent(key, cont);
+                    return getParent(key, cont,limit);
                 }
             }
-            return cont;
+            if (cont != 0)
+                return ArgKey;
+            else {
+                return 0;
+            }
         }
 
 
