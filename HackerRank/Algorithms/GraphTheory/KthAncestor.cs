@@ -17,7 +17,7 @@ namespace HackerRank.Algorithms.GraphTheory
             int[] nodes,line;
             
             t = int.Parse(Console.ReadLine());
-            List<int> aux;
+           
 
             for (int i = 0; i < t; i++)
             {
@@ -55,6 +55,7 @@ namespace HackerRank.Algorithms.GraphTheory
                         case 1:
                             //Remove valor do indice
                             this.grafo.Remove(y);
+                            this.removeParent(y);
                         break;
                         case 2:
                             //Imprime valor Kth parent of X
@@ -70,6 +71,7 @@ namespace HackerRank.Algorithms.GraphTheory
 
         public int getParent(int ArgKey,int cont,int limit) {
             List<int> values;
+
             foreach (int key in this.grafo.Keys) {
                 values = this.grafo[key];
                 if (values.Exists(x => x == ArgKey)&& limit!=cont) {
@@ -84,6 +86,18 @@ namespace HackerRank.Algorithms.GraphTheory
             }
         }
 
+
+
+        public void removeParent(int removeKey)
+        {
+            List<int> values;
+            foreach (int key in this.grafo.Keys)
+            {
+                values = this.grafo[key];
+                values.RemoveAll(x => x == removeKey);
+            }
+         
+        }
 
 
         public void addleaf(int y, int x) {

@@ -16,7 +16,8 @@ namespace HackerRank
         static void Main(String[] args)
         {
             StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new KthAncestor();
+            HackerRank hackerRank = new KthAncestorV2();
+            
             hackerRank.run(input);
 
             Console.ReadLine();
