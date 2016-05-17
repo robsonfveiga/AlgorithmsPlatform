@@ -10,28 +10,29 @@ namespace HackerRank.Algorithms.GraphTheory
 {
     class KthAncestorV2 : HackerRank
     {
-        Dictionary<Int64, LinkedNode<Int64>> grafo = new Dictionary<Int64, LinkedNode<Int64>>();
+        Dictionary<int, LinkedNode<int>> grafo = new Dictionary<int, LinkedNode<int>>();
+        LinkedNode<int> yNode;
+        StringBuilder strB = new StringBuilder();
 
         public void run(StreamReader Console)
         {
-            Int64 t,p,q,l;
-            Int64[] nodes,line;
-            Int64 x, y;
+            int t, p, x, y, q, l;
+            int[] nodes, line;
 
-            t = Int64.Parse(Console.ReadLine());
-            
+            t = int.Parse(Console.ReadLine());
 
-            for (Int64 i = 0; i < t; i++)
+
+            for (int i = 0; i < t; i++)
             {
 
                 //Numero de nodes
-                p = Int64.Parse(Console.ReadLine());
+                p = int.Parse(Console.ReadLine());
 
 
                 //Todos Nodes baseado no numero apresentado como entrada 'p'
-                for (Int64 ii = 0; ii < p; ii++)
+                for (int ii = 0; ii < p; ii++)
                 {
-                    nodes = Array.ConvertAll(Console.ReadLine().Split(' '), Int64.Parse); 
+                    nodes = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
                     // X = Filho
                     x = nodes[0];
                     //Y = Pai
@@ -42,96 +43,111 @@ namespace HackerRank.Algorithms.GraphTheory
                 }
 
                 //Numero de consultas. 
-                q = Int64.Parse(Console.ReadLine());
-                for (Int64 ii = 0; ii < q; ii++)
+                q = int.Parse(Console.ReadLine());
+                for (int ii = 0; ii < q; ii++)
                 {
-                    line = Array.ConvertAll(Console.ReadLine().Split(),Int64.Parse);
+                    line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
                     y = line[1];
-                
-                    switch (line[0]) {
+
+                    switch (line[0])
+                    {
                         case 0:
                             //Adiciona valor no indice
                             x = line[2];
                             this.addleaf(y, x);
-                        break;
+                            break;
                         case 1:
                             //Remove valor do indice
                             this.grafo.Remove(y);
-                        break;
+                            break;
                         case 2:
                             //Imprime valor Kth parent of X
                             x = line[1];
                             l = line[2];
                             if (this.grafo.ContainsKey(x))
                             {
-                                System.Console.WriteLine(this.getParent(this.grafo[x], 0, l));
+                                strB.Append(this.getParent(this.grafo[x], 0, l) + Environment.NewLine);
+                                //System.Console.WriteLine();
                             }
                             else
                             {
-                                System.Console.WriteLine(0);
+                                strB.Append(0+ Environment.NewLine);
                             }
                             break;
                     }
                 }
             }
+            System.Console.Write(strB);
         }
 
 
-        public Int64 getParent(LinkedNode<Int64> node,Int64 cont,Int64 limit) {
+        public int getParent(LinkedNode<int> node, int cont, int limit)
+        {
 
-            if (node == null)
-                return 0;
+            bool continuar = true;
 
-            if (limit!=cont) {
-                cont++;
-                return this.getParent(node.Previous, cont, limit);
-            };
-          
+            while (continuar)
+            {
+                if (node.Previous != null && limit > cont && this.grafo.ContainsKey(node.Previous.Value))
+                {
+                    cont++;
+                    node = this.grafo[node.Previous.Value];
+                }
+                else
+                {
+                    continuar = false;
+                    if (limit > cont)
+                        return 0;
+                }
+            }
+
             return node.Value;
         }
 
 
 
-        public void removeParent(Int64 removeKey)
+        public void removeParent(int removeKey)
         {
             this.grafo.Remove(removeKey);
         }
 
 
-        public void addleaf(Int64 y, Int64 x) {
-    
+        public void addleaf(int y, int x)
+        {
+            
+           
             if (y == 0)
+            {
+                yNode = this.grafo.ContainsKey(y) ? this.grafo[y] : null;
+                if (this.grafo.ContainsKey(x))
+                {
+                    this.grafo[x] = new LinkedNode<int>(yNode, x);
+                }
+                else
+                {
+                    this.grafo.Add(x, new LinkedNode<int>(yNode, x));
+                }
+            }
+            else
             {
                 if (this.grafo.ContainsKey(y))
                 {
-                    this.grafo[y] = new LinkedNode<Int64>(null, y);
+                    if (this.grafo.ContainsKey(x))
+                    {
+                        this.grafo[x] = new LinkedNode<int>(this.grafo[y], x);
+                    }
+                    else
+                    {
+                        this.grafo.Add(x, new LinkedNode<int>(this.grafo[y], x));
+                    }
                 }
-                else {
-                    this.grafo.Add(y, new LinkedNode<Int64>(null, y));
+                else
+                {
+                    this.grafo.Add(y, new LinkedNode<int>(null, y));
+                    this.grafo.Add(x, new LinkedNode<int>(this.grafo[y], x));
                 }
             }
-            else {
-                if (this.grafo.ContainsKey(y))
-                {
-                    if (this.grafo.ContainsKey(x))
-                    {
-                        this.grafo[x] = new LinkedNode<Int64>(this.grafo[y], x);
-                    }
-                    else {
-                        this.grafo.Add(x, new LinkedNode<Int64>(this.grafo[y], x));
-                    }
-                }
-                else {
-                    this.grafo.Add(y, new LinkedNode<Int64>(null, y));
-                    if (this.grafo.ContainsKey(x))
-                    {
-                        this.grafo[x] = new LinkedNode<Int64>(this.grafo[y], x);
-                    }
-                    else {
-                        this.grafo.Add(x, new LinkedNode<Int64>(this.grafo[y], x));
-                    }
-                }
-            }   
+
         }
     }
 }

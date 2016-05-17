@@ -50,6 +50,7 @@
     <Compile Include="30daysChallange\Operators.cs" />
     <Compile Include="Algorithms\GraphTheory\KthAncestorV2.cs" />
     <Compile Include="Algorithms\GraphTheory\KthAncestor.cs" />
+    <Compile Include="Algorithms\GraphTheory\KthAncestorV3.cs" />
     <Compile Include="Algorithms\GraphTheory\node.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
     <Compile Include="Algorithms\Implementation\FindDigits.cs" />
@@ -68,10 +69,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

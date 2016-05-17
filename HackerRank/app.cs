@@ -15,8 +15,8 @@ namespace HackerRank
     {
         static void Main(String[] args)
         {
-            StreamReader input = new StreamReader("input.txt");
-            HackerRank hackerRank = new KthAncestorV2();
+            StreamReader input = new StreamReader("input2.txt");
+            HackerRank hackerRank = new KthAncestorV3();
             
             hackerRank.run(input);
 

@@ -70,15 +70,31 @@ namespace HackerRank.Algorithms.GraphTheory
 
 
         public int getParent(int ArgKey,int cont,int limit) {
-            List<int> values;
+           List<int> values;
+           List<int> keys = this.grafo.Keys.ToList();
+           int key;
+           bool continuar = true;
+           bool sair = false;
 
-            foreach (int key in this.grafo.Keys) {
-                values = this.grafo[key];
-                if (values.Exists(x => x == ArgKey)&& limit!=cont) {
-                    cont++;
-                    return getParent(key, cont,limit);
+            while (continuar) {
+                for (int x = 0; x < keys.Count; x++)
+                {
+                    key = keys[x];
+                    values = this.grafo[key];
+                    if (values.Exists(xx => xx == ArgKey) && limit != cont)
+                    {
+                        ArgKey = key;
+                        sair = true;
+                        cont++;
+                    }
                 }
+
+                if (sair && limit <= cont || ArgKey == 0 || cont==0) {
+                    continuar = false;
+                }
+
             }
+
             if (cont != 0)
                 return ArgKey;
             else {
@@ -91,10 +107,10 @@ namespace HackerRank.Algorithms.GraphTheory
         public void removeParent(int removeKey)
         {
             List<int> values;
-            foreach (int key in this.grafo.Keys)
+            for(int x = 0;x< this.grafo.Keys.Count;x++)
             {
-                values = this.grafo[key];
-                values.RemoveAll(x => x == removeKey);
+                values = this.grafo[x];
+                values.RemoveAll(xx => xx == removeKey);
             }
          
         }
