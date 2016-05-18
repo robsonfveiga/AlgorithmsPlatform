@@ -10,67 +10,91 @@ namespace HackerRank.Algorithms.GraphTheory
 {
     class KthAncestorV3 : HackerRank
     {
-        Dictionary<int, LinkedNode<int>> grafo = new Dictionary<int, LinkedNode<int>>();
-        LinkedNode<int> yNode;
+        Dictionary<string, List<string>> grafo = new Dictionary<string, List<string>>();
+        Dictionary<string, string> nodeReference = new Dictionary<string, string>();
+
+        List<string> descendentes, novoDescendentes,aux;
         StringBuilder strB = new StringBuilder();
+        int t, p, q, l, tamanhoLista;
+        string[] nodes;
+        string x, y, nodeBuscado, retorno;
 
         public void run(StreamReader Console)
         {
-            int t, p, x, y, q, l;
-            int[] nodes, line;
-
             t = int.Parse(Console.ReadLine());
-
 
             for (int i = 0; i < t; i++)
             {
-
                 //Numero de nodes
                 p = int.Parse(Console.ReadLine());
 
-
+                // Cria Arvore
                 //Todos Nodes baseado no numero apresentado como entrada 'p'
                 for (int ii = 0; ii < p; ii++)
                 {
-                    nodes = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                    
+                    nodes = Console.ReadLine().Split(' ');
+
                     // X = Filho
                     x = nodes[0];
                     //Y = Pai
                     y = nodes[1];
-
+                    
+                    this.addNode(x, y);
                 }
 
                 //Numero de consultas. 
                 q = int.Parse(Console.ReadLine());
                 for (int ii = 0; ii < q; ii++)
                 {
-                    line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-                    y = line[1];
+                    nodes = Console.ReadLine().Split();
+                    y = nodes[1];
 
-                    switch (line[0])
+                    switch (nodes[0])
                     {
-                        case 0:
+                        case "0":
                             //Adiciona valor no indice
-                            x = line[2];
-                            //this.addleaf(y, x);
+                            x = nodes[2];
+                            this.addNode(x, y);
                             break;
-                        case 1:
+                        case "1":
                             //Remove valor do indice
                             this.grafo.Remove(y);
                             break;
-                        case 2:
+                        case "2":
                             //Imprime valor Kth parent of X
-                            x = line[1];
-                            l = line[2];
-                            if (this.grafo.ContainsKey(x))
+                            x = nodes[1];
+                            l = int.Parse(nodes[2]);
+
+                            if (this.grafo.TryGetValue(x, out aux))
                             {
-                                strB.Append(this.getParent(this.grafo[x], 0, l) + Environment.NewLine);
-                                //System.Console.WriteLine();
+
+                                if (aux == null)
+                                {
+                                    aux = getPrimeiroPaiComReferencia(x);
+                                }
+
+                                tamanhoLista = aux.Count;
+                                if (l <= tamanhoLista)
+                                {
+                                    nodeBuscado = aux[aux.Count - l];
+                                    if (this.grafo.TryGetValue(nodeBuscado, out aux))
+                                    {
+                                        retorno = nodeBuscado;
+                                    }
+                                    else {
+                                        retorno = "0";
+                                    }
+                                }
+                                else {
+                                    retorno = "0";
+                                }
+                                strB.Append(retorno + Environment.NewLine);
                             }
-                            else
-                            {
-                                strB.Append(0+ Environment.NewLine);
+                            else {
+                                strB.Append("0" + Environment.NewLine);
                             }
+                            
                             break;
                     }
                 }
@@ -79,32 +103,75 @@ namespace HackerRank.Algorithms.GraphTheory
         }
 
 
-        public int getParent(LinkedNode<int> node, int cont, int limit)
-        {
+        public List<string> getPrimeiroPaiComReferencia(string filho) {
+          
+            y = this.nodeReference[x];
+            if (y == null)
+                return getPrimeiroPaiComReferencia(y);
 
+
+            //Inseri o pai
+            if (this.grafo.TryGetValue(y, out aux))
+            {
+                aux.AddRange(aux);
+            }
+            else {
+                aux = new List<string>();
+            }
+
+            aux.Add(y);
+            return aux;
+        }
+
+
+        public void addNode(string x,string y) {
+
+            this.nodeReference.Add(x, y);
+
+            if (!this.grafo.ContainsKey(x))
+            {
+                //Adicionar o filho na chave e o pai e seus descedentes no value
+                if (this.grafo.TryGetValue(y, out descendentes))
+                {
+                    tamanhoLista = descendentes != null ? descendentes.Count + 1 : 1;
+                    novoDescendentes = new List<string>(tamanhoLista);
+                    if(descendentes!=null)
+                        novoDescendentes.AddRange(descendentes);
+
+                    novoDescendentes.Add(y);
+                    this.grafo.Add(x, novoDescendentes);
+                }
+                else {
+                    //Filho sem pai
+                    this.grafo.Add(x, null);
+                }
+            }
+        }
+
+        public string getParent(string[] node, int cont, int limit) { 
+        
             bool continuar = true;
-
             while (continuar)
             {
-                if (node.Previous != null && limit > cont && this.grafo.ContainsKey(node.Previous.Value))
+                if (limit > cont && this.grafo.TryGetValue(node[0], out aux))
                 {
                     cont++;
-                    node = this.grafo[node.Previous.Value];
+                  
                 }
                 else
                 {
                     continuar = false;
                     if (limit > cont)
-                        return 0;
+                        return "0";
                 }
             }
 
-            return node.Value;
+            return node[1];
         }
 
 
 
-        public void removeParent(int removeKey)
+        public void removeParent(string removeKey)
         {
             this.grafo.Remove(removeKey);
         }

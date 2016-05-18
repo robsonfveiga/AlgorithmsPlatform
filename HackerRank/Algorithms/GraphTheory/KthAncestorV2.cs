@@ -11,13 +11,13 @@ namespace HackerRank.Algorithms.GraphTheory
     class KthAncestorV2 : HackerRank
     {
         Dictionary<int, LinkedNode<int>> grafo = new Dictionary<int, LinkedNode<int>>();
-        LinkedNode<int> yNode;
         StringBuilder strB = new StringBuilder();
 
         public void run(StreamReader Console)
         {
             int t, p, x, y, q, l;
-            int[] nodes, line;
+            int[]  line;
+            string[] nodes;
 
             t = int.Parse(Console.ReadLine());
 
@@ -32,7 +32,7 @@ namespace HackerRank.Algorithms.GraphTheory
                 //Todos Nodes baseado no numero apresentado como entrada 'p'
                 for (int ii = 0; ii < p; ii++)
                 {
-                    nodes = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                    nodes = Console.ReadLine().Split(' ');
                     // X = Filho
                     x = nodes[0];
                     //Y = Pai
@@ -71,7 +71,7 @@ namespace HackerRank.Algorithms.GraphTheory
                             }
                             else
                             {
-                                strB.Append(0+ Environment.NewLine);
+                                strB.Append(0 + Environment.NewLine);
                             }
                             break;
                     }
@@ -114,19 +114,18 @@ namespace HackerRank.Algorithms.GraphTheory
 
         public void addleaf(int y, int x)
         {
-            
-           
+
             if (y == 0)
             {
-                yNode = this.grafo.ContainsKey(y) ? this.grafo[y] : null;
                 if (this.grafo.ContainsKey(x))
                 {
-                    this.grafo[x] = new LinkedNode<int>(yNode, x);
+                    this.grafo[x] = new LinkedNode<int>(this.grafo.ContainsKey(y) ? this.grafo[y] : null, x);
                 }
                 else
                 {
-                    this.grafo.Add(x, new LinkedNode<int>(yNode, x));
+                    this.grafo.Add(x, new LinkedNode<int>(this.grafo.ContainsKey(y) ? this.grafo[y] : null, x));
                 }
+
             }
             else
             {

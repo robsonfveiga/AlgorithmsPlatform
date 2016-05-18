@@ -48,8 +48,8 @@
     <Compile Include="30daysChallange\HelloWorld.cs" />
     <Compile Include="30daysChallange\IntroToConditionalStatements.cs" />
     <Compile Include="30daysChallange\Operators.cs" />
-    <Compile Include="Algorithms\GraphTheory\KthAncestorV2.cs" />
-    <Compile Include="Algorithms\GraphTheory\KthAncestor.cs" />
+    <None Include="Algorithms\GraphTheory\KthAncestorV2.cs" />
+    <None Include="Algorithms\GraphTheory\KthAncestor.cs" />
     <Compile Include="Algorithms\GraphTheory\KthAncestorV3.cs" />
     <Compile Include="Algorithms\GraphTheory\node.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
