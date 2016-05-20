@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.Implementation
+namespace AlgorithmsPlatform.Algorithms.Implementation
 {
-    class SherlockAndSquares : HackerRank
+    class SherlockAndSquares : ITestable
     {
         public void run(StreamReader Console)
         {

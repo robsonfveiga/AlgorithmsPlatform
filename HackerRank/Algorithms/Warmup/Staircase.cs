@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms
+namespace AlgorithmsPlatform.Algorithms
 {
-    class Staircase : HackerRank
+    class Staircase : ITestable
     {
         public void run(StreamReader Console)
         {

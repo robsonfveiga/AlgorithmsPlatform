@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.Implementation
+namespace AlgorithmsPlatform.Algorithms.Implementation
 {
-    class FindDigits : HackerRank
+    class FindDigits : ITestable
     {
         public void run(StreamReader Console)
         {

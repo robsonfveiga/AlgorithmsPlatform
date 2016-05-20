@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Collections
+namespace AlgorithmsPlatform.Collections
 {
     public sealed class LinkedNode<T>
     {

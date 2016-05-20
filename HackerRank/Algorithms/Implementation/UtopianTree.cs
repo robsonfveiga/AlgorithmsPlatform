@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.Implementation
+namespace AlgorithmsPlatform.Algorithms.Implementation
 {
-    class UtopianTree : HackerRank
+    class UtopianTree : ITestable
     {
         public void run(StreamReader Console)
         {

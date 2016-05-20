@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.GraphTheory
+namespace AlgorithmsPlatform.Algorithms.GraphTheory
 {
-    class KthAncestorV2 : HackerRank
+    class KthAncestorV2 : ITestable
     {
         Dictionary<int, LinkedNode<int>> grafo = new Dictionary<int, LinkedNode<int>>();
         StringBuilder strB = new StringBuilder();

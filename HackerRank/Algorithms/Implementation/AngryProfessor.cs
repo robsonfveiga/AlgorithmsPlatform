@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.Implementation
+namespace AlgorithmsPlatform.Algorithms.Implementation
 {
-    class AngryProfessor : HackerRank
+    class AngryProfessor : ITestable
     {
         public void run(StreamReader Console)
         {

@@ -1,4 +1,4 @@
-﻿using HackerRank.Collections;
+﻿using AlgorithmsPlatform.Collections;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackerRank.Algorithms.GraphTheory
+namespace AlgorithmsPlatform.Algorithms.GraphTheory
 {
-    class KthAncestorV3 : HackerRank
+    class KthAncestorV3 : ITestable
     {
         Dictionary<string, List<string>> grafo = new Dictionary<string, List<string>>();
         Dictionary<string, string> nodeReference = new Dictionary<string, string>();
