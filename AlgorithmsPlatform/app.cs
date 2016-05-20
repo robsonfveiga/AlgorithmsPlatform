@@ -2,6 +2,7 @@
 using AlgorithmsPlatform.Algorithms;
 using AlgorithmsPlatform.Algorithms.GraphTheory;
 using AlgorithmsPlatform.Algorithms.Implementation;
+using AlgorithmsPlatform.Course;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,11 +16,10 @@ namespace AlgorithmsPlatform
     {
         static void Main(String[] args)
         {
-            StreamReader input = new StreamReader("input2txt");
-            ITestable algorithm = new KthAncestorV3();
+            StreamReader input = new StreamReader("Tester/InputFiles/input.txt");
+            ITestable algorithm = new EuclideanAlgorithm();
             algorithm.run(input);
             Console.ReadLine();
-
         }
     }
 }

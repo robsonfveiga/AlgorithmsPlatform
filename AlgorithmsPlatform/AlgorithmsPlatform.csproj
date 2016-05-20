@@ -7,8 +7,8 @@
     <ProjectGuid>{B199815C-9FD0-4C10-8CA1-0A8DFA91CE4D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HackerRank</RootNamespace>
-    <AssemblyName>HackerRank</AssemblyName>
+    <RootNamespace>AlgorithmsPlatform</RootNamespace>
+    <AssemblyName>AlgorithmsPlatform</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,6 +59,7 @@
     <Compile Include="Algorithms\Warmup\TimeConversion.cs" />
     <Compile Include="app.cs" />
     <Compile Include="Collections\LinkedNode.cs" />
+    <Compile Include="Course\EuclideanAlgorithm.cs" />
     <Compile Include="Tester\ITestable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,9 +76,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Course\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
