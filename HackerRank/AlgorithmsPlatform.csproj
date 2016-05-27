@@ -62,6 +62,9 @@
     <Compile Include="Algorithms\WorldMay\RichieRich.cs" />
     <Compile Include="app.cs" />
     <Compile Include="Collections\LinkedNode.cs" />
+    <Compile Include="Course\DefaultClass.cs" />
+    <Compile Include="Course\Week 2\Fibonacci.cs" />
+    <Compile Include="Course\Week 2\FibonacciLastDigit.cs" />
     <Compile Include="Tester\ITestable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,9 +81,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Course\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

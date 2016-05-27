@@ -3,6 +3,7 @@ using AlgorithmsPlatform.Algorithms;
 using AlgorithmsPlatform.Algorithms.GraphTheory;
 using AlgorithmsPlatform.Algorithms.Implementation;
 using AlgorithmsPlatform.Algorithms.WorldMay;
+using AlgorithmsPlatform.Course.Week_2;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,10 +15,10 @@ namespace AlgorithmsPlatform
 {
     class app
     {
-        static void Main(String[] args)
+        static void xMain(String[] args)
         {
             StreamReader input = new StreamReader("Tester/InputFiles/input.txt");
-            ITestable algorithm = new DivAndSpan();
+            ITestable algorithm = new Fibonacci();
             algorithm.run(input);
             Console.ReadLine();
 
