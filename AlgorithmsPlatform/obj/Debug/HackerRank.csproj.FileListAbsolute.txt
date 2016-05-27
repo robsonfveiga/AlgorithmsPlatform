@@ -1,8 +1,0 @@
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\bin\Debug\HackerRank.exe.config
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\bin\Debug\input.txt
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\bin\Debug\HackerRank.exe
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\bin\Debug\HackerRank.pdb
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\obj\Debug\HackerRank.csprojResolveAssemblyReference.cache
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\obj\Debug\HackerRank.exe
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\obj\Debug\HackerRank.pdb
-C:\Users\f0fp158\Source\Repos\HackerRank\HackerRank\bin\Debug\input2.txt
