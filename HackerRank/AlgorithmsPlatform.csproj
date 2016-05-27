@@ -45,6 +45,7 @@
   <ItemGroup>
     <None Include="Algorithms\GraphTheory\KthAncestorV2.cs" />
     <None Include="Algorithms\GraphTheory\KthAncestor.cs" />
+    <Compile Include="Algorithms\WorldMay\ComparetheTriplets.cs" />
     <Compile Include="Algorithms\GraphTheory\KthAncestorV3.cs" />
     <Compile Include="Algorithms\Implementation\AngryProfessor.cs" />
     <Compile Include="Algorithms\Implementation\FindDigits.cs" />
@@ -57,9 +58,13 @@
     <Compile Include="Algorithms\Warmup\SimpleArraySum.cs" />
     <Compile Include="Algorithms\Warmup\Staircase.cs" />
     <Compile Include="Algorithms\Warmup\TimeConversion.cs" />
+    <Compile Include="Algorithms\WorldMay\DivAndSpan.cs" />
+    <Compile Include="Algorithms\WorldMay\RichieRich.cs" />
     <Compile Include="app.cs" />
     <Compile Include="Collections\LinkedNode.cs" />
-    <Compile Include="Course\EuclideanAlgorithm.cs" />
+    <Compile Include="Course\DefaultClass.cs" />
+    <Compile Include="Course\Week 2\Fibonacci.cs" />
+    <Compile Include="Course\Week 2\FibonacciLastDigit.cs" />
     <Compile Include="Tester\ITestable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
