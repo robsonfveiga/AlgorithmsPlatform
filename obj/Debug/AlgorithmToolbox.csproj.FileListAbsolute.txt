@@ -1,5 +1,0 @@
-C:\Users\f0fp158\Source\Repos\AlgorithmToolbox\bin\Debug\AlgorithmToolbox.exe.config
-C:\Users\f0fp158\Source\Repos\AlgorithmToolbox\bin\Debug\AlgorithmToolbox.exe
-C:\Users\f0fp158\Source\Repos\AlgorithmToolbox\bin\Debug\AlgorithmToolbox.pdb
-C:\Users\f0fp158\Source\Repos\AlgorithmToolbox\obj\Debug\AlgorithmToolbox.exe
-C:\Users\f0fp158\Source\Repos\AlgorithmToolbox\obj\Debug\AlgorithmToolbox.pdb
