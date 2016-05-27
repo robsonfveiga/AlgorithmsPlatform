@@ -15,10 +15,10 @@ namespace AlgorithmsPlatform
 {
     class app
     {
-        static void xMain(String[] args)
+        static void Main(String[] args)
         {
             StreamReader input = new StreamReader("Tester/InputFiles/input.txt");
-            ITestable algorithm = new Fibonacci();
+            ITestable algorithm = new LCM();
             algorithm.run(input);
             Console.ReadLine();
 

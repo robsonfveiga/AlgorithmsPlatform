@@ -7,40 +7,30 @@ namespace AlgorithmsPlatform.Course
 {
     public class DefaultClass
     {
-        static void Main(String[] args)
+        static void Mainx(String[] args)
         {
-       
-            Int64 n = Int64.Parse(Console.ReadLine());
-            System.Console.WriteLine(getFibonacciLastDigit(n));
+
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+            int a = input[0];
+            int b = input[1];
+
+            System.Console.WriteLine(gcd(a, b));
+            Console.ReadLine();
         }
 
-        public static Int64 getFibonacciLastDigit(Int64 n)
+        private static int gcd(int a, int b)
         {
-            return calc_fib(n) % 10;
-        }
-
-        public static Int64 calc_fib(Int64 n)
-        {
-            Int64[] fib = new Int64[n+1];
-            Int64 retorno = 0;
-
-            for (Int64 x = 0; x < n + 1; x++)
+            int current_gcd = -1;
+            int count = 2;
+            while (current_gcd == -1)
             {
-
-                if (x <= 1)
+                if (count % a == 0 && count % b == 0)
                 {
-                    retorno = x;
+                    return count;
                 }
-                else {
-                    retorno = (fib[x - 1] + fib[x - 2])%10;
-                }
-
-                fib[x] = retorno;
+                count++;
             }
-
-            return retorno;
+            return -1;
         }
-
-
     }
 }

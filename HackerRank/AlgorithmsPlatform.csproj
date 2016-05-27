@@ -65,6 +65,8 @@
     <Compile Include="Course\DefaultClass.cs" />
     <Compile Include="Course\Week 2\Fibonacci.cs" />
     <Compile Include="Course\Week 2\FibonacciLastDigit.cs" />
+    <Compile Include="Course\Week 2\GCD.cs" />
+    <Compile Include="Course\Week 2\LCM.cs" />
     <Compile Include="Tester\ITestable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
