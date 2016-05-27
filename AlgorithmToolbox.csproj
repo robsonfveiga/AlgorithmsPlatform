@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA422115-5476-4C03-BB03-5C5CFF1180A8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlgorithmToolbox</RootNamespace>
+    <AssemblyName>AlgorithmToolbox</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Course\DefaultClass.cs" />
+    <Compile Include="Course\EuclideanAlgorithm.cs" />
+    <Compile Include="Course\Week 2\Fibonacci.cs" />
+    <Compile Include="Course\Week 2\FibonacciLastDigit.cs" />
+    <Compile Include="Course\Week 2\GCD.cs" />
+    <Compile Include="Course\Week 2\LCM.cs" />
+    <Compile Include="GraphTheory\KthAncestor.cs" />
+    <Compile Include="GraphTheory\KthAncestorV2.cs" />
+    <Compile Include="GraphTheory\KthAncestorV3.cs" />
+    <Compile Include="Implementation\AngryProfessor.cs" />
+    <Compile Include="Implementation\FindDigits.cs" />
+    <Compile Include="Implementation\ServiceLane.cs" />
+    <Compile Include="Implementation\SherlockAndSquares.cs" />
+    <Compile Include="Implementation\SherlockAndTheBeast.cs" />
+    <Compile Include="Implementation\UtopianTree.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tester\ITestable.cs" />
+    <Compile Include="Warmup\DiagonalDifference.cs" />
+    <Compile Include="Warmup\PlusMinus.cs" />
+    <Compile Include="Warmup\SimpleArraySum.cs" />
+    <Compile Include="Warmup\Staircase.cs" />
+    <Compile Include="Warmup\TimeConversion.cs" />
+    <Compile Include="WorldMay\ComparetheTriplets.cs" />
+    <Compile Include="WorldMay\DivAndSpan.cs" />
+    <Compile Include="WorldMay\RichieRich.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tester\InputFiles\input.txt" />
+    <Content Include="Tester\InputFiles\input2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
