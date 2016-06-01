@@ -29,7 +29,7 @@ namespace AlgorithmToolbox.Course.Week_3
 
             while (capacidade != 0) {
                 foreach (ItemKnapsack item in itens) {
-                    
+                    capacidade += capacidade
                 }
             }
 
