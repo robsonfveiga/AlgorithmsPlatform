@@ -1,13 +1,16 @@
-﻿using System;
+﻿using AlgorithmsPlatform;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 
-namespace AlgorithmsPlatform.Course
+namespace AlgorithmToolbox.Course.Week_3
 {
-    public class DefaultClass
+    class ChangingMoney : ITestable
     {
-        static void Mainx(String[] args)
+        public void run(StreamReader Console)
         {
             int aux;
             int value = int.Parse(Console.ReadLine());
@@ -18,11 +21,9 @@ namespace AlgorithmsPlatform.Course
             coins.Add(1);
 
             int retorno = 0;
-            while (value > 0)
-            {
+            while (value > 0) {
                 aux = value - coins[0];
-                if (aux < 0)
-                {
+                if (aux<0) {
                     coins.RemoveAt(0);
                     continue;
                 }
@@ -30,7 +31,7 @@ namespace AlgorithmsPlatform.Course
                 value = aux;
             }
             System.Console.WriteLine(retorno);
+
         }
-        
     }
 }
