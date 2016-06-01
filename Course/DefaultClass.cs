@@ -7,7 +7,7 @@ namespace AlgorithmsPlatform.Course
 {
     public class DefaultClass
     {
-        static void Mainx(String[] args)
+        static void Main(String[] args)
         {
 
             int[] input = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
@@ -20,17 +20,13 @@ namespace AlgorithmsPlatform.Course
 
         private static int gcd(int a, int b)
         {
-            int current_gcd = -1;
-            int count = 2;
-            while (current_gcd == -1)
-            {
-                if (count % a == 0 && count % b == 0)
-                {
-                    return count;
-                }
-                count++;
+            int resto;
+            while (b != 0) {
+                resto = a % b;
+                a = b;
+                b = resto;
             }
-            return -1;
+            return a;
         }
     }
 }

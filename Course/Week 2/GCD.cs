@@ -16,21 +16,14 @@ namespace AlgorithmsPlatform.Course.Week_2
 
         private static int gcd(int a, int b)
         {
-            int current_gcd = 1;
-            for (int d = 2; d <= a && d <= b; ++d)
+            int resto;
+            while (b != 0)
             {
-                if (a % d == 0 && b % d == 0)
-                {
-                    if (d > current_gcd)
-                    {
-                        current_gcd = d;
-                    }
-                }
+                resto = a % b;
+                a = b;
+                b = resto;
             }
-
-            return current_gcd;
+            return a;
         }
-
-
     }
 }
