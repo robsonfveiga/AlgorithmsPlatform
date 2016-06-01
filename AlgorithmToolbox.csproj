@@ -52,8 +52,8 @@
     <Compile Include="Course\Week 3\ChangingMoney.cs" />
     <Compile Include="Course\Week 3\FractionalKnapsack.cs" />
     <Compile Include="GraphTheory\KthAncestor.cs" />
-    <Compile Include="GraphTheory\KthAncestorV2.cs" />
-    <Compile Include="GraphTheory\KthAncestorV3.cs" />
+    <None Include="GraphTheory\KthAncestorV2.cs" />
+    <None Include="GraphTheory\KthAncestorV3.cs" />
     <Compile Include="Implementation\AngryProfessor.cs" />
     <Compile Include="Implementation\FindDigits.cs" />
     <Compile Include="Implementation\ServiceLane.cs" />
@@ -76,6 +76,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Tester\InputFiles\input.txt" />
     <Content Include="Tester\InputFiles\input2.txt" />
   </ItemGroup>
