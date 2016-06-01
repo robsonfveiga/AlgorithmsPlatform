@@ -12,41 +12,56 @@ namespace AlgorithmToolbox.Course.Week_3
     {
         public void run(StreamReader Console)
         {
-            int[] values = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
-            int numEle = values[0];
-            int capacidade = values[1];
-            int valor, peso, unidade;
-
+            double[] values = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
+            double numEle = values[0];
+            double capacidade = values[1];
+            double valor, peso;
+            double valorFinal = 0;
             List<ItemKnapsack> itens = new List<ItemKnapsack>();
             for (int x = 0; x < numEle; x++)
             {
-                values = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                values = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
                 valor = values[0];
                 peso = values[1];
                 itens.Add(new ItemKnapsack(valor, peso));
             }
             itens.Sort();
-
+            double safePass, safePassAux;
             while (capacidade != 0) {
                 foreach (ItemKnapsack item in itens) {
-                    capacidade += capacidade
+                    if (capacidade == 0)
+                        break;
+
+                    safePass = item.Peso / capacidade;
+                    if (safePass <= 1)
+                    {
+                        capacidade = capacidade - item.Peso;
+                        valorFinal += item.Valor;
+                    }
+                    else {
+                        safePassAux = item.Peso / safePass;
+                        valorFinal += (item.Valor/ item.Peso)*safePassAux;
+                        capacidade = capacidade - safePassAux;
+                    }
                 }
             }
+
+            System.Console.Write(string.Format("{0:N4}", valorFinal));
 
         }
     }
 
     class ItemKnapsack : IComparable
     {
-        int valor;
-        int peso;
-        public ItemKnapsack(int valor,int peso)
+        double valor;
+        double peso;
+        public ItemKnapsack(double valor, double peso)
         {
             this.peso = peso;
             this.valor = valor;
         }
 
-        public int Valor
+        public double Valor
         {
             get
             {
@@ -59,7 +74,7 @@ namespace AlgorithmToolbox.Course.Week_3
             }
         }
 
-        public int Peso
+        public double Peso
         {
             get
             {
@@ -75,9 +90,9 @@ namespace AlgorithmToolbox.Course.Week_3
         public int CompareTo(object obj)
         {
             ItemKnapsack that = (ItemKnapsack)obj;
-            if (this.Valor > that.Valor && this.Peso<that.Peso) return -1;
+            if (this.Valor/ this.Peso < that.Valor/ that.Peso) return 1;
             if (this.Valor == that.Valor && this.Peso == that.Peso) return 0;
-            return 1;
+            return -1;
         }
     }
 }
