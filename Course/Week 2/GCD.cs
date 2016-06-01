@@ -11,7 +11,8 @@ namespace AlgorithmsPlatform.Course.Week_2
     {
         public void run(StreamReader Console)
         {
-            throw new NotImplementedException();
+            int[] values = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+            System.Console.Write(gcd(values[0], values[1]));
         }
 
         private static int gcd(int a, int b)
